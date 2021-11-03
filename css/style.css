@@ -1,0 +1,52 @@
+html,
+body 
+{
+  padding: 0;
+}
+
+.header {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+.secondary-header {
+  color: red;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+}
+.button {
+  position: absolute;
+  text-align: center;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 16px 32px;
+  
+  display: inline-block;
+  font-size: 35px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 3px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+canvas {
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  display: block;
+}
