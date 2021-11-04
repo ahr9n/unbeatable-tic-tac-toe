@@ -30,12 +30,12 @@ function optimalMove()
       }
     }
   }
-  
+
   board[move.row][move.col] = ai;
   currentPlayer = human; // toggle
 }
 
-function minimax(board, alpha, beta, nowMaximizing) 
+function minimax(board, depth, alpha, beta, nowMaximizing) 
 {
   // base case
   let result = checkWining();
@@ -47,7 +47,7 @@ function minimax(board, alpha, beta, nowMaximizing)
   if (nowMaximizing) // maximizer
   {
     let maxEval = -Infinity;
-    
+
     // traversing the remaining possible nodes
     for (let row = 0; row < 3; row++) 
     {
@@ -57,11 +57,11 @@ function minimax(board, alpha, beta, nowMaximizing)
         if (board[row][col] == "") 
         {
           board[row][col] = ai; // push
-          let score = minimax(board, alpha, beta, false);  // recursive call
+          let score = minimax(board, depth + 1, alpha, beta, false);  // recursive call
           board[row][col] = ""; // pop
-          
+
           maxEval = max(score, maxEval);
-          
+
           alpha = max(score, alpha);
           // pruning the hopeless states
           if (beta <= alpha)
@@ -83,11 +83,11 @@ function minimax(board, alpha, beta, nowMaximizing)
         if (board[row][col] == "") 
         {
           board[row][col] = human;
-          let score = minimax(board, alpha, beta, true);
+          let score = minimax(board, depth + 1, alpha, beta, true);
           board[row][col] = "";
-          
+
           minEval = min(score, minEval);
-          
+
           beta = min(score, beta);
           if (beta <= alpha)
           {
