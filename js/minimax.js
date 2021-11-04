@@ -11,6 +11,7 @@ function optimalMove()
   let bestScore = -Infinity;
   let move;
 
+  // traversing the remaining possible nodes
   for (let row = 0; row < 3; row++) 
   {
     for (let col = 0; col < 3; col++) 
